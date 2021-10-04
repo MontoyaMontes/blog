@@ -17,6 +17,7 @@
 	--first-color:  hsl(var(--hue-color), 78%, 61%);
 	--second-color: #f8f8f8;
 	--black:  #333;
+	--black-under: rgba(51,51,51,0.8);
 	--white:  #fff;
 }
 
@@ -194,7 +195,7 @@ section {
 .banner .contentBox h4{
 	font-size: 1.2em;
 	font-weight: 300;
-	color: var(--black);	
+	color: var(--black);
 	letter-spacing: 4px;
 	text-align: center;
 	text-transform: uppercase;
@@ -282,7 +283,7 @@ section.about {
 }
 
 .card {
-	margin: 5px;
+	margin: 3px;
 	flex-grow: 0;
 	flex-shrink: 1;
 	flex-basis: 220px;	
@@ -290,7 +291,7 @@ section.about {
 
 .post .container {
 	position: relative;
-	margin-top: 40px;
+	margin-top: 10px;
 	grid-gap: 1px;
 }
 
@@ -304,7 +305,7 @@ section.about {
 }
 
 .container .card .face {
-	width: 300px;
+	width: 250px;
 	height: 200px;
 	transition: 0.5s;
 }
@@ -425,3 +426,180 @@ footer .footMenu li a {
 }
 
 /*============ MEDIA QUERIES ============*/
+
+
+/*============ GALLERY ============*/
+
+.gallery img {
+    border-radius: 10px;
+    display: block;
+    margin: 2rem auto;
+    width: 600px;
+    height: 470px;
+    object-fit: cover;
+    border: 1px solid black;
+}
+
+/*============  DOCUMENTS  ============*/
+
+.docContainer {
+	margin-bottom: 2rem;
+}
+
+.doc {
+	width: 100%;
+	height: 100%;
+}
+
+.doc .pdf {
+	margin-top: 2rem;
+	width: 100%;
+	height: 500px;
+}
+
+.pdfContainer.hidden {
+	display: none;
+}
+
+
+.pdf a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.cardDoc{
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.image-data {
+	height: 15rem;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.background-image {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url("../images/Konigsberg_bridges.png") center no-repeat;
+	background-size: cover;
+	z-index: -1;
+	transition: transform 2s;
+}
+
+.cardDoc:hover .background-image {
+	transform: scale(1.5);
+}
+
+.publication-details {
+	width: 100%;
+	height: 100%;
+	background: var(--black-under);
+	font-size: 1rem;
+	font-weight: bold;
+	color: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 1rem;
+}
+
+.publication-details i {
+	margin-right: 1rem;
+}
+
+.author {
+	display: inline-block;
+	margin-bottom: .5rem;
+	transition: all .5s;
+}
+
+.author:hover {
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.date {
+	display: block;
+}
+
+.imageAuthor {
+    bottom: 0px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.imageAuthor:hover {
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.imageInfo {
+	font-size: 50%;
+}
+
+
+.post-data {
+	align-content: center;
+	background-color: #fff;
+	position: relative;
+}
+
+.title-doc {
+	align-items: initial;
+	font-size: 1.2rem;
+	line-height: 1;
+	margin: 1rem 1.2rem 0;
+}
+
+.subtitle-doc {
+	align-items: initials;
+	font-size: .8rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: #a2a2a2;
+	margin: 1rem 1.2rem 0;
+}
+
+.description-doc {
+	position: relative;
+	margin: 1rem 1.2rem 0;
+}
+
+.cta{
+	text-align: right;
+	margin-top: 1rem;
+	margin-right: 1rem;
+	height: 2.5rem;
+}
+
+@media screen and (min-width: 600px) {
+	.cardDoc {
+		flex-direction: row;
+		max-width: 75rem;
+	}
+	.image-data {
+		flex-basis: 40%;
+		height: unset;
+	}
+
+	.publication-details {
+		transform: translateX(-100%);
+	}
+
+	.cardDoc:hover .publication-details{
+		transform: translateX(0);
+	}
+
+	.post-data {
+		flex-basis: 60%;
+	}
+
+}
+
+
+
